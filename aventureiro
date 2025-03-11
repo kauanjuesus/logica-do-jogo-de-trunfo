@@ -147,7 +147,7 @@ int main() {
 		break;
 
 		case 5:
-		if(densidade>densidade2){
+		if(densidade<densidade2){
 			printf("carta numero venceu 1\n");
 			printf("os dados escolhidos para a comparação foram as densidades\n");
 			printf("densidade da carta: 1 %d\n",densidade);
