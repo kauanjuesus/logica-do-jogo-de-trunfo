@@ -187,7 +187,9 @@ int main() {
 			printf("superpoder da carta 2: %d\n",super2);
 		
 		break;
-	}
+		 default:
+      			printf("Opção inválida\n");
+	}	
 }
     return 0;
 }  
