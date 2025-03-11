@@ -1,0 +1,549 @@
+#include <stdio.h>
+
+int main() {
+    int ndpt, ndpt2,escolha,escolha2,resultado =0,resultado2 =0;
+    unsigned long int pop, pop2;
+    float area, pib, area2, pib2, densidade, densidade2, pibc, pibc2,empate=0,empate2=0;
+    double super, super2;
+    char estado[50],cidade[50],codigo[4],estado2[50],cidade2[50],codigo2[4];
+
+    printf("DADOS DA PRIMEIRA CARTA \n");
+    printf("nome do estado: ");
+    scanf("%s",estado);
+    printf("numero do codigo: ");
+    scanf("%s",codigo);
+    printf("nome da cidade: ");
+    scanf("%s",cidade);
+    printf("qual a populacao: ");
+    scanf("%lu", &pop);
+    printf("qual a area: ");
+    scanf("%f", &area);
+    printf("qual o pib: ");
+    scanf("%f", &pib);
+    printf("quantos numeros turisticos tem: ");
+    scanf("%d", &ndpt);
+
+    densidade = (float) pop / area;
+    pibc = pib * 1000000000.0 / pop;
+    super = ((double) ndpt + (double) pop + (double) area + (double) pib + (double) pibc) - 1/densidade;
+
+    printf("---------------------------------------\n");
+
+    printf("DADOS DA SEGUNDA CARTA\n");
+    printf("nome do estado: ");
+    scanf("%s",estado2);
+    printf("numero do codigo: ");
+    scanf("%s",codigo2);
+    printf("nome da cidade: ");
+    scanf("%s",cidade2);
+    printf("qual a populacao: ");
+    scanf("%lu", &pop2);
+    printf("qual a area: ");
+    scanf("%f", &area2);
+    printf("qual o pib: ");
+    scanf("%f", &pib2);
+    printf("quantos numeros turisticos tem: ");
+    scanf("%d", &ndpt2);
+
+    densidade2 = (float) pop2 / area2;
+    pibc2 = pib2 * 1000000000.0 / pop2;
+    super2 = ((double) ndpt2 + (double) pop2 + (double) area2 + (double) pib2 + (double) pibc2) - 1/densidade2;
+
+    printf("--------------------------------------------\n");
+
+    printf("TODOS OS DADOS REGISTRADOS DA PRIMEIRA CARTA \n");
+    printf("estado: %s\n",estado);
+    printf("codigo: %s\n",codigo);
+    printf("cidade: %s\n",cidade);
+    printf("populacao: %lu de habitantes\n", pop);
+    printf("area: %.2f de km²\n", area);
+    printf("pib: %.2f\n", pib);
+    printf("numeros de pontos turisticos: %d\n", ndpt);
+    printf("densidade populacional: %.2f\n", densidade);
+    printf("pib per capita: %.2f\n", pibc);
+    printf("super poder total da carta: %f\n", super);
+
+    printf("--------------------------------------------\n");
+
+    printf("TODOS OS DADOS REGISTRADOS DA SEGUNDA CARTA \n");
+    printf("estado: %s\n",estado2);
+    printf("codigo: %s\n",codigo2);
+    printf("cidade: %s\n",cidade2);
+    printf("populacao: %lu de habitantes\n", pop2);
+    printf("area: %.2f de km²\n", area2);
+    printf("pib: %.2f\n", pib2);
+    printf("numeros de pontos turisticos: %d\n", ndpt2);
+    printf("densidade populacional: %.2f\n", densidade2);
+    printf("pib per capita: %.2f\n", pibc2);
+    printf("super poder total da carta: %f\n", super2);
+
+    printf("-------------------------------------------\n");
+
+	printf("qual dados das cartas gostaria de comparar:\n");
+	printf("1:população\n");
+	printf("2:area\n");
+	printf("3:pib");
+	printf("4:pontos turisticos\n");
+	printf("5:densidade populacional\n");
+	printf("6:pib per capital\n");
+	printf("7:superpoder\n");
+	scanf("%d",&escolha);
+
+	switch(escolha){
+		case 1:
+		if(pop>pop2){
+			printf("carta numero venceu essa rodada 1\n");
+			printf("os dados escolhidos para a comparação foram populacao\n");
+			printf("população da carta 1:  %lu\n",pop);
+			printf("população da carta 2:  %lu\n",pop2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate +(float) pop;
+			empate2 = empate2 + (float) pop2;
+		}else if (pop < pop2){
+			printf("carta numero venceu essa rodada 2\n");
+			printf("os dados escolhidos para a comparação foram populacao\n");
+			printf("população da carta 1:  %lu\n",pop);
+			printf("população da carta 2:  %lu\n",pop2);
+			printf("-------------------------------------------\n");
+			empate = empate +(float) pop;
+			empate2 = empate2 + (float) pop2;
+			resultado2 = +1;
+		}else{
+			printf("essa rodada terminou em empate");
+			printf("-------------------------------------------\n");
+		}
+		break;
+		
+		case 2:
+		if(area>area2){
+			printf("carta numero 1 venceu esta rodada \n");
+			printf("os dados escolhidos para a comparação foram a area\n");
+			printf("area da carta 1:  %d\n",area);
+			printf("area da carta 2:  %d\n",area2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate +(float) area;
+			empate2 = empate2 +(float) area2;
+		}else if (area < area2){
+			printf("carta numero 1 venceu esta rodada \n");
+			printf("os dados escolhidos para a comparação foram a area\n");
+			printf("area da carta 1:  %d\n",area);
+			printf("area da carta 2:  %d\n",area2);
+			printf("-------------------------------------------\n");
+			resultado2 = +1;
+			empate = empate +(float) area;
+			empate2 = empate2 +(float) area2;
+		}else{
+			printf("essa rodada terminou em empate");
+			printf("-------------------------------------------\n");
+		}
+		break;
+
+		case 3:
+		if(pib>pib2){
+			printf("carta numero 1 venceu  esta rodada\n");
+			printf("os dados escolhidos para a comparação foi o pib\n");
+			printf("pib da carta 1:  %d\n",pib);
+			printf("pib da carta 2:  %d\n",pib2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate +(float) pib2;
+			empate2 = empate2 +(float) pib2;
+		}else if (pib<pib2){
+			printf("carta numero 2 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foi o pib\n");
+			printf("pib da carta 1:  %d\n",pib);
+			printf("pib da carta 2:  %d\n",pib2);
+			printf("-------------------------------------------\n");
+			resultado2 = +1;
+			empate2 = empate2 +(float) pib2;
+			empate = empate +(float) pib2;
+		}else{
+			printf("essa rodada terminou em empate");
+			printf("-------------------------------------------\n");
+
+		}
+		break;
+
+		case 4:
+		if(ndpt>ndpt2){
+			printf("carta numero 1 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foram pontos turisticos\n");
+			printf("população da carta 1:  %d\n",ndpt);
+			printf("população da carta 2:  %d\n",ndpt2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate +(float) ndpt;
+			empate2 = empate2 +(float) ndpt2;
+		}else if (ndpt<ndpt2){
+			printf("carta numero 2 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foram pontos turisticos\n");
+			printf("pontos turisticos da carta 1:  %d\n",ndpt);
+			printf("pontos turisticos da carta 2:  %d\n",ndpt2);
+			printf("-------------------------------------------\n");
+			resultado2 = +1;
+			empate2 = empate2 +(float) ndpt2;
+			empate = empate +(float) ndpt;
+		}else{
+			printf("esta rodada deu empate");
+			printf("-------------------------------------------\n");
+		}
+		break;
+
+		case 5:
+		if(densidade<densidade2){
+			printf("carta numero 1 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foram as densidades\n");
+			printf("densidade da carta 1:  %d\n",densidade);
+			printf("densidade da carta 2:  %d\n",densidade2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate -(float) densidade;
+			empate2 = empate2-(float) densidade2;
+		}else if (densidade>densidade2){
+			printf("carta numero 2 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foram as densidades\n");
+			printf("densidades da carta 1:  %d\n",densidade);
+			printf("densidades da carta 2:  %d\n",densidade2);
+			printf("-------------------------------------------\n");
+			resultado2 = +1;
+			empate2 = empate2-(float) densidade2;
+			empate = empate -(float) densidade;
+		}else{
+			printf("esta rodada terminou em empate");
+			printf("-------------------------------------------\n");
+		}
+		break;
+
+		case 6:
+		if(pibc>pibc2){
+			printf("carta numero 1 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foi o pib per capital\n");
+			printf("pib per capital da carta 1:  %d\n",pibc);
+			printf("pib per capital da carta 2:  %d\n",pibc2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate +(float) pibc;
+			empate2 = empate2 +(float) pibc2;
+		}else if(pibc<pibc2){
+			printf("carta numero 2 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foi pib per capital\n");
+			printf("pib per capital da carta 1:  %d\n",pibc);
+			printf("pib per capital da carta 2:  %d\n",pibc2);
+			printf("-------------------------------------------\n");
+			resultado2 = +1;
+			empate2 = empate2 +(float) pibc2;
+			empate = empate +(float) pibc;
+		}else{
+			printf("esta rodada terminou em empate");
+			printf("-------------------------------------------\n");
+		}
+		break;
+
+		case 7:
+		if(super>super2){
+			printf("carta numero 1 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
+			printf("superpoder da carta 1: %d\n",super);
+			printf("superpoder da carta 2: %d\n",super2);
+			printf("-------------------------------------------\n");
+			resultado = +1;
+			empate = empate +(float) super;
+			empate2 = empate2 +(float) super2;
+		}else if(super<super2){
+			printf("carta numero 2 venceu esta rodada\n");
+			printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
+			printf("superpoder da carta 1: %d\n",super);
+			printf("superpoder da carta 2: %d\n",super2);
+			printf("-------------------------------------------\n");
+			resultado2 = +1;
+			empate2 = empate2 +(float) super2;
+			empate = empate +(float) super;
+		}else{
+			printf("esta rodada terminou em empate");
+			printf("-------------------------------------------\n");
+		}
+		break;
+		default:
+      printf("Opção inválida\n");
+	
+}
+	printf("---------------------------------------------------\n");
+	printf("qual outro dado das cartas gostaria de comparar:\n");
+	printf("1:população\n");
+	printf("2:area\n");
+	printf("3:pib");
+	printf("4:pontos turisticos\n");
+	printf("5:densidade populacional\n");
+	printf("6:pib per capital\n");
+	printf("7:superpoder\n");
+	scanf("%d",&escolha2);
+
+	switch(escolha2){
+		case 1:
+		if(escolha != escolha2){
+			if(pop>pop2){
+				printf("carta numero 1 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram populacao\n");
+				printf("população da carta 1:  %lu\n",pop);
+				printf("população da carta 2:  %lu\n",pop2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate +(float) pop;
+				empate2 = empate2 +(float) pop2;
+			}else if(pop<pop2){
+				printf("carta numero 2 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram populacao\n");
+				printf("população da carta 1:  %lu\n",pop);
+				printf("população da carta 2:  %lu\n",pop2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate = empate +(float) pop;
+				empate2 = empate2 +(float) pop2;
+			}else{
+				printf("esta rodada terminou em empate");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}
+	break;
+		
+		case 2:
+		if(escolha != escolha2){
+			 if(area>area2){
+				printf("carta numero venceu 1\n");
+				printf("os dados escolhidos para a comparação foram a area\n");
+				printf("area da carta 1:  %d\n",area);
+				printf("area da carta 2:  %d\n",area2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate +(float) area;
+				empate2 = empate2 +(float) area2;
+			}else if(area<area2){
+				printf("carta numero venceu 2\n");
+				printf("os dados escolhidos para a comparação foram a area\n");
+				printf("area da carta 1:  %d\n",area);
+				printf("area da carta 2:  %d\n",area2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate = empate +(float) area;
+				empate2 = empate2 +(float) area2;
+			}else{
+				printf("esta rodada terminou");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}	
+		break;
+
+		case 3:
+		if(escolha != escolha2){
+			if(pib>pib2){
+				printf("carta numero 1 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foi o pib\n");
+				printf("pib da carta 1:  %d\n",pib);
+				printf("pib da carta 2:  %d\n",pib2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate +(float)pib;
+				empate2 = empate2 +(float)pib2;
+			}else if(pib<pib2){
+				printf("carta numero 2 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram populacao\n");
+				printf("pib da carta 1:  %d\n",pib);
+				printf("pib da carta 2:  %d\n",pib2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate = empate +(float)pib;
+				empate2 = empate2 +(float)pib2;
+			}else{
+				printf("esta rodada deu empate");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}
+		break;
+
+		case 4:
+		if(escolha != escolha2){
+			if(ndpt>ndpt2){
+				printf("carta numero 1 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram pontos turisticos\n");
+				printf("população da carta 1:  %d\n",ndpt);
+				printf("população da carta 2:  %d\n",ndpt2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate +(float) ndpt;
+				empate2 = empate2 +(float) ndpt2;
+			}else if(ndpt<ndpt2){
+				printf("carta numero 2 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram pontos turisticos\n");
+				printf("pontos turisticos da carta 1:  %d\n",ndpt);
+				printf("pontos turisticos da carta 2:  %d\n",ndpt2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate2 = empate2 +(float) ndpt2;
+				empate = empate +(float) ndpt;
+			}else{
+				printf("esta rodada terminou em empate");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}
+		break;
+
+		case 5:
+		if(escolha != escolha2){
+			 if(densidade<densidade2){
+				printf("carta numero 1 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram as densidades\n");
+				printf("densidade da carta 1:  %d\n",densidade);
+				printf("densidade da carta 2:  %d\n",densidade2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate -(float) densidade;
+				empate2 = empate2 -(float)densidade2;
+			}else if (densidade>densidade2){
+				printf("carta numero 2 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foram as densidades\n");
+				printf("densidades da carta 1:  %d\n",densidade);
+				printf("densidades da carta 2:  %d\n",densidade2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate2 = empate2 -(float)densidade2;
+				empate = empate -(float) densidade;
+			}else{
+				printf("esta rodada terminou em empate");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}
+		break;
+
+		case 6:
+		if(escolha != escolha2){
+			if(pibc>pibc2){
+				printf("carta numero 1 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foi o pib per capital\n");
+				printf("pib per capital da carta 1:  %d\n",pibc);
+				printf("pib per capital da carta 2:  %d\n",pibc2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate +(float) pibc;
+				empate2 = empate2 +(float)pibc2;
+			}else if (pibc<pibc2){
+				printf("carta numero 2 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foi pib per capital\n");
+				printf("pib per capital da carta 1:  %d\n",pibc);
+				printf("pib per capital da carta 2:  %d\n",pibc2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate2 = empate2 +(float)pibc2;
+				empate = empate +(float) pibc;
+			}else{
+				printf("esta rodada terminou em empate");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}	
+		break;
+
+		case 7:
+		if(escolha == escolha2){
+			 if(super>super2){
+				printf("carta numero 1 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
+				printf("superpoder da carta 1: %d\n",super);
+				printf("superpoder da carta 2: %d\n",super2);
+				printf("-------------------------------------------\n");
+				resultado = +1;
+				empate = empate +(float)super;
+				empate2 = empate2 +(float)super2;
+		}else if(super<super2){
+				printf("carta numero 2 venceu esta rodada\n");
+				printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
+				printf("superpoder da carta 1: %d\n",super);
+				printf("superpoder da carta 2: %d\n",super2);
+				printf("-------------------------------------------\n");
+				resultado2 = +1;
+				empate2 = empate2 +(float)super2;
+				empate = empate +(float)super;
+			}else{
+				printf("esta rodada terminou em empate");
+				printf("-------------------------------------------\n");
+			}
+		}else{
+			printf("voce escolheu os mesmo atributos duas vezes isso nao e permitido,tente novamente");
+		}
+		break;
+		default:
+      printf("Opção inválida\n");
+	
+}
+	if(escolha != escolha2){
+		if(resultado > resultado2){
+			printf("carta numero 1 venceu a partida seus dados sao os seguintes\n");
+    		printf("estado: %s\n",estado);
+    		printf("codigo: %s\n",codigo);
+    		printf("cidade: %s\n",cidade);
+    		printf("populacao: %lu de habitantes\n", pop);
+    		printf("area: %.2f de km²\n", area);
+    		printf("pib: %.2f\n", pib);
+    		printf("numeros de pontos turisticos: %d\n", ndpt);
+    		printf("densidade populacional: %.2f\n", densidade);
+    		printf("pib per capita: %.2f\n", pibc);
+    		printf("super poder total da carta: %f\n", super);
+	
+		}else if (resultado < resultado2){
+			printf("carta numero 2 venceu a partida seus dados sao os seguintes\n");
+			printf("estado: %s\n",estado2);
+			printf("codigo: %s\n",codigo2);
+			printf("cidade: %s\n",cidade2);
+			printf("populacao: %lu de habitantes\n", pop2);
+			printf("area: %.2f de km²\n", area2);
+			printf("pib: %.2f\n", pib2);
+			printf("numeros de pontos turisticos: %d\n", ndpt2);
+			printf("densidade populacional: %.2f\n", densidade2);
+			printf("pib per capita: %.2f\n", pibc2);
+			printf("super poder total da carta: %f\n", super2);
+		}else{
+			if(empate>empate2){
+				printf("carta numero 1 venceu a partida seus dados sao os seguintes\n");
+    		printf("estado: %s\n",estado);
+    		printf("codigo: %s\n",codigo);
+    		printf("cidade: %s\n",cidade);
+    		printf("populacao: %lu de habitantes\n", pop);
+    		printf("area: %.2f de km²\n", area);
+    		printf("pib: %.2f\n", pib);
+    		printf("numeros de pontos turisticos: %d\n", ndpt);
+    		printf("densidade populacional: %.2f\n", densidade);
+    		printf("pib per capita: %.2f\n", pibc);
+    		printf("super poder total da carta: %f\n", super);
+			}else if(empate<empate2){
+				printf("carta numero 2 venceu a partida seus dados sao os seguintes\n");
+			printf("estado: %s\n",estado2);
+			printf("codigo: %s\n",codigo2);
+			printf("cidade: %s\n",cidade2);
+			printf("populacao: %lu de habitantes\n", pop2);
+			printf("area: %.2f de km²\n", area2);
+			printf("pib: %.2f\n", pib2);
+			printf("numeros de pontos turisticos: %d\n", ndpt2);
+			printf("densidade populacional: %.2f\n", densidade2);
+			printf("pib per capita: %.2f\n", pibc2);
+			printf("super poder total da carta: %f\n", super2);
+			}else{
+				printf("por incrivel que pareça o jogo deu empate");
+			}
+		}
+	}else{
+		printf(".................................................");
+	}	
+    return 0;
+}  
