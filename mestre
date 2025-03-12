@@ -92,7 +92,7 @@ int main() {
 	switch(escolha){
 		case 1:
 		if(pop>pop2){
-			printf("carta numero venceu essa rodada 1\n");
+			printf("carta numero 1 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foram populacao\n");
 			printf("população da carta 1:  %lu\n",pop);
 			printf("população da carta 2:  %lu\n",pop2);
@@ -101,7 +101,7 @@ int main() {
 			empate = empate +(float) pop;
 			empate2 = empate2 + (float) pop2;
 		}else if (pop < pop2){
-			printf("carta numero venceu essa rodada 2\n");
+			printf("carta numero 2 venceu essa rodada \n");
 			printf("os dados escolhidos para a comparação foram populacao\n");
 			printf("população da carta 1:  %lu\n",pop);
 			printf("população da carta 2:  %lu\n",pop2);
@@ -119,8 +119,8 @@ int main() {
 		if(area>area2){
 			printf("carta numero 1 venceu esta rodada \n");
 			printf("os dados escolhidos para a comparação foram a area\n");
-			printf("area da carta 1:  %d\n",area);
-			printf("area da carta 2:  %d\n",area2);
+			printf("area da carta 1:  %f\n",area);
+			printf("area da carta 2:  %f\n",area2);
 			printf("-------------------------------------------\n");
 			resultado = +1;
 			empate = empate +(float) area;
@@ -128,8 +128,8 @@ int main() {
 		}else if (area < area2){
 			printf("carta numero 1 venceu esta rodada \n");
 			printf("os dados escolhidos para a comparação foram a area\n");
-			printf("area da carta 1:  %d\n",area);
-			printf("area da carta 2:  %d\n",area2);
+			printf("area da carta 1:  %f\n",area);
+			printf("area da carta 2:  %f\n",area2);
 			printf("-------------------------------------------\n");
 			resultado2 = +1;
 			empate = empate +(float) area;
@@ -144,8 +144,8 @@ int main() {
 		if(pib>pib2){
 			printf("carta numero 1 venceu  esta rodada\n");
 			printf("os dados escolhidos para a comparação foi o pib\n");
-			printf("pib da carta 1:  %d\n",pib);
-			printf("pib da carta 2:  %d\n",pib2);
+			printf("pib da carta 1:  %f\n",pib);
+			printf("pib da carta 2:  %f\n",pib2);
 			printf("-------------------------------------------\n");
 			resultado = +1;
 			empate = empate +(float) pib2;
@@ -153,8 +153,8 @@ int main() {
 		}else if (pib<pib2){
 			printf("carta numero 2 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foi o pib\n");
-			printf("pib da carta 1:  %d\n",pib);
-			printf("pib da carta 2:  %d\n",pib2);
+			printf("pib da carta 1:  %f\n",pib);
+			printf("pib da carta 2:  %f\n",pib2);
 			printf("-------------------------------------------\n");
 			resultado2 = +1;
 			empate2 = empate2 +(float) pib2;
@@ -195,21 +195,21 @@ int main() {
 		if(densidade<densidade2){
 			printf("carta numero 1 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foram as densidades\n");
-			printf("densidade da carta 1:  %d\n",densidade);
-			printf("densidade da carta 2:  %d\n",densidade2);
+			printf("densidade da carta 1:  %f\n",densidade);
+			printf("densidade da carta 2:  %f\n",densidade2);
 			printf("-------------------------------------------\n");
 			resultado = +1;
-			empate = empate -(float) densidade;
-			empate2 = empate2-(float) densidade2;
+			empate = empate +(float) 1/densidade;
+			empate2 = empate2+(float) 1/densidade2;
 		}else if (densidade>densidade2){
 			printf("carta numero 2 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foram as densidades\n");
-			printf("densidades da carta 1:  %d\n",densidade);
-			printf("densidades da carta 2:  %d\n",densidade2);
+			printf("densidades da carta 1:  %f\n",densidade);
+			printf("densidades da carta 2:  %f\n",densidade2);
 			printf("-------------------------------------------\n");
 			resultado2 = +1;
-			empate2 = empate2-(float) densidade2;
-			empate = empate -(float) densidade;
+			empate2 = empate2+(float) 1/densidade2;
+			empate = empate +(float) 1/densidade;
 		}else{
 			printf("esta rodada terminou em empate");
 			printf("-------------------------------------------\n");
@@ -220,8 +220,8 @@ int main() {
 		if(pibc>pibc2){
 			printf("carta numero 1 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foi o pib per capital\n");
-			printf("pib per capital da carta 1:  %d\n",pibc);
-			printf("pib per capital da carta 2:  %d\n",pibc2);
+			printf("pib per capital da carta 1:  %f\n",pibc);
+			printf("pib per capital da carta 2:  %f\n",pibc2);
 			printf("-------------------------------------------\n");
 			resultado = +1;
 			empate = empate +(float) pibc;
@@ -229,8 +229,8 @@ int main() {
 		}else if(pibc<pibc2){
 			printf("carta numero 2 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foi pib per capital\n");
-			printf("pib per capital da carta 1:  %d\n",pibc);
-			printf("pib per capital da carta 2:  %d\n",pibc2);
+			printf("pib per capital da carta 1:  %f\n",pibc);
+			printf("pib per capital da carta 2:  %f\n",pibc2);
 			printf("-------------------------------------------\n");
 			resultado2 = +1;
 			empate2 = empate2 +(float) pibc2;
@@ -245,8 +245,8 @@ int main() {
 		if(super>super2){
 			printf("carta numero 1 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
-			printf("superpoder da carta 1: %d\n",super);
-			printf("superpoder da carta 2: %d\n",super2);
+			printf("superpoder da carta 1: %f\n",super);
+			printf("superpoder da carta 2: %f\n",super2);
 			printf("-------------------------------------------\n");
 			resultado = +1;
 			empate = empate +(float) super;
@@ -254,8 +254,8 @@ int main() {
 		}else if(super<super2){
 			printf("carta numero 2 venceu esta rodada\n");
 			printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
-			printf("superpoder da carta 1: %d\n",super);
-			printf("superpoder da carta 2: %d\n",super2);
+			printf("superpoder da carta 1: %f\n",super);
+			printf("superpoder da carta 2: %f\n",super2);
 			printf("-------------------------------------------\n");
 			resultado2 = +1;
 			empate2 = empate2 +(float) super2;
@@ -273,7 +273,7 @@ int main() {
 	printf("qual outro dado das cartas gostaria de comparar:\n");
 	printf("1:população\n");
 	printf("2:area\n");
-	printf("3:pib");
+	printf("3:pib\n");
 	printf("4:pontos turisticos\n");
 	printf("5:densidade populacional\n");
 	printf("6:pib per capital\n");
@@ -315,8 +315,8 @@ int main() {
 			 if(area>area2){
 				printf("carta numero venceu 1\n");
 				printf("os dados escolhidos para a comparação foram a area\n");
-				printf("area da carta 1:  %d\n",area);
-				printf("area da carta 2:  %d\n",area2);
+				printf("area da carta 1:  %f\n",area);
+				printf("area da carta 2:  %f\n",area2);
 				printf("-------------------------------------------\n");
 				resultado = +1;
 				empate = empate +(float) area;
@@ -324,8 +324,8 @@ int main() {
 			}else if(area<area2){
 				printf("carta numero venceu 2\n");
 				printf("os dados escolhidos para a comparação foram a area\n");
-				printf("area da carta 1:  %d\n",area);
-				printf("area da carta 2:  %d\n",area2);
+				printf("area da carta 1:  %f\n",area);
+				printf("area da carta 2:  %f\n",area2);
 				printf("-------------------------------------------\n");
 				resultado2 = +1;
 				empate = empate +(float) area;
@@ -344,8 +344,8 @@ int main() {
 			if(pib>pib2){
 				printf("carta numero 1 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foi o pib\n");
-				printf("pib da carta 1:  %d\n",pib);
-				printf("pib da carta 2:  %d\n",pib2);
+				printf("pib da carta 1:  %f\n",pib);
+				printf("pib da carta 2:  %f\n",pib2);
 				printf("-------------------------------------------\n");
 				resultado = +1;
 				empate = empate +(float)pib;
@@ -353,8 +353,8 @@ int main() {
 			}else if(pib<pib2){
 				printf("carta numero 2 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foram populacao\n");
-				printf("pib da carta 1:  %d\n",pib);
-				printf("pib da carta 2:  %d\n",pib2);
+				printf("pib da carta 1:  %f\n",pib);
+				printf("pib da carta 2:  %f\n",pib2);
 				printf("-------------------------------------------\n");
 				resultado2 = +1;
 				empate = empate +(float)pib;
@@ -402,21 +402,21 @@ int main() {
 			 if(densidade<densidade2){
 				printf("carta numero 1 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foram as densidades\n");
-				printf("densidade da carta 1:  %d\n",densidade);
-				printf("densidade da carta 2:  %d\n",densidade2);
+				printf("densidade da carta 1:  %f\n",densidade);
+				printf("densidade da carta 2:  %f\n",densidade2);
 				printf("-------------------------------------------\n");
 				resultado = +1;
-				empate = empate -(float) densidade;
-				empate2 = empate2 -(float)densidade2;
+				empate = empate +(float) 1/densidade;
+				empate2 = empate2 +(float)1/densidade2;
 			}else if (densidade>densidade2){
 				printf("carta numero 2 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foram as densidades\n");
-				printf("densidades da carta 1:  %d\n",densidade);
-				printf("densidades da carta 2:  %d\n",densidade2);
+				printf("densidades da carta 1:  %f\n",densidade);
+				printf("densidades da carta 2:  %f\n",densidade2);
 				printf("-------------------------------------------\n");
 				resultado2 = +1;
-				empate2 = empate2 -(float)densidade2;
-				empate = empate -(float) densidade;
+				empate2 = empate2 +(float)1/densidade2;
+				empate = empate +(float) 1/densidade;
 			}else{
 				printf("esta rodada terminou em empate");
 				printf("-------------------------------------------\n");
@@ -431,8 +431,8 @@ int main() {
 			if(pibc>pibc2){
 				printf("carta numero 1 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foi o pib per capital\n");
-				printf("pib per capital da carta 1:  %d\n",pibc);
-				printf("pib per capital da carta 2:  %d\n",pibc2);
+				printf("pib per capital da carta 1:  %f\n",pibc);
+				printf("pib per capital da carta 2:  %f\n",pibc2);
 				printf("-------------------------------------------\n");
 				resultado = +1;
 				empate = empate +(float) pibc;
@@ -440,8 +440,8 @@ int main() {
 			}else if (pibc<pibc2){
 				printf("carta numero 2 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foi pib per capital\n");
-				printf("pib per capital da carta 1:  %d\n",pibc);
-				printf("pib per capital da carta 2:  %d\n",pibc2);
+				printf("pib per capital da carta 1:  %f\n",pibc);
+				printf("pib per capital da carta 2:  %f\n",pibc2);
 				printf("-------------------------------------------\n");
 				resultado2 = +1;
 				empate2 = empate2 +(float)pibc2;
@@ -460,8 +460,8 @@ int main() {
 			 if(super>super2){
 				printf("carta numero 1 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
-				printf("superpoder da carta 1: %d\n",super);
-				printf("superpoder da carta 2: %d\n",super2);
+				printf("superpoder da carta 1: %f\n",super);
+				printf("superpoder da carta 2: %f\n",super2);
 				printf("-------------------------------------------\n");
 				resultado = +1;
 				empate = empate +(float)super;
@@ -469,8 +469,8 @@ int main() {
 		}else if(super<super2){
 				printf("carta numero 2 venceu esta rodada\n");
 				printf("os dados escolhidos para a comparação foi os superpoderes das cartas\n");
-				printf("superpoder da carta 1: %d\n",super);
-				printf("superpoder da carta 2: %d\n",super2);
+				printf("superpoder da carta 1: %f\n",super);
+				printf("superpoder da carta 2: %f\n",super2);
 				printf("-------------------------------------------\n");
 				resultado2 = +1;
 				empate2 = empate2 +(float)super2;
@@ -496,7 +496,7 @@ int main() {
     		printf("populacao: %lu de habitantes\n", pop);
     		printf("area: %.2f de km²\n", area);
     		printf("pib: %.2f\n", pib);
-    		printf("numeros de pontos turisticos: %d\n", ndpt);
+    		printf("numeros de pontos turisticos: %f\n", ndpt);
     		printf("densidade populacional: %.2f\n", densidade);
     		printf("pib per capita: %.2f\n", pibc);
     		printf("super poder total da carta: %f\n", super);
@@ -515,7 +515,8 @@ int main() {
 			printf("super poder total da carta: %f\n", super2);
 		}else{
 			if(empate>empate2){
-				printf("carta numero 1 venceu a partida seus dados sao os seguintes\n");
+			printf("carta numero 1 venceu a partida por a soma dos atributos escolhidos serem maior do que a soma dos atributos da segunda carta");
+			printf("seus dados sao os seguintes\n");
     		printf("estado: %s\n",estado);
     		printf("codigo: %s\n",codigo);
     		printf("cidade: %s\n",cidade);
@@ -527,7 +528,8 @@ int main() {
     		printf("pib per capita: %.2f\n", pibc);
     		printf("super poder total da carta: %f\n", super);
 			}else if(empate<empate2){
-				printf("carta numero 2 venceu a partida seus dados sao os seguintes\n");
+			printf("carta numero 2 venceu a partida por a soma dos atributos escolhidos serem maior do que a soma dos atributos da segunda carta");
+			printf("seus dados sao os seguintes\n");
 			printf("estado: %s\n",estado2);
 			printf("codigo: %s\n",codigo2);
 			printf("cidade: %s\n",cidade2);
